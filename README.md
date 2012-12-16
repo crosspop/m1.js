@@ -5,7 +5,7 @@ This is a straightforward implementation of [CommonJS Modules/1.0](http://wiki.c
 Test
 ----
 
-	$ cd m1/tests/modules/1.0/absolute #Any folder what you want to test
+	$ cd tests/modules/1.0/absolute #Any folder what you want to test
 	$ python -m SimpleHTTPServer 8000
 
 And open `http://localhost:8000/` on your browser with console(press `ctrl` + `shift` + `J` if using Google Chrome)
