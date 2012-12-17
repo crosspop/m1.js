@@ -9,12 +9,8 @@ http.createServer(function (request, response) {
 	var url = path.normalize(request.url);
 	if(url == path.sep)
 	{
-		response.writeHead(200);
-		response.end("<!DOCTYPE HTML><html><head></head><body><script src='m1" +
-			".js'></script><script>shim('test',{print:function(){console.log(" +
-			"arguments);},assert:function(guard,message){if(guard)this.print(" +
-			"'PASS '+message,'pass');else this.print('FAIL '+message,'fail');" +
-			"}});require('program');</script></body></html>");
+		response.writeHead(200, {"Content-Type": "text/html"});
+		response.end(fs.readFileSync("test.html", "utf8"));
 		console.log(200, "TEST PAGE");
 	}
 	else if(url == (path.sep + "m1.js"))
